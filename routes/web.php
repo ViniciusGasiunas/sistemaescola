@@ -1,5 +1,5 @@
-<?php
 
+<?php
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,14 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::get('/home', function (){ 
-    return view('home');
-});
-
+Route::get('/home/{id}', 'HomeController@home');
 Route::get('/contato', 'contatoController@listarcontatos');
+Route::get('/aluno/cadastro','AlunoController@cadastrarAluno');
+Route::post('/aluno/cadastro','AlunoController@cadastrarAluno');
+
+Route::get('/aluno/todos', 'AlunoController@listarAlunos');
+
+Route::get('/aluno/deletar/{id}','AlunoController@deletarAluno');
+// como o usuario tem que digitar/acessar -- o que vai acontecer quando ele fizer isso
