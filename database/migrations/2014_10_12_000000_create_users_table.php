@@ -11,15 +11,15 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() //criar tabela
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) { //Blueprint::"tradutor" de SQL para PHP
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->rememberToken(); //armazena as informações -ex:senha facebook- através de tokens para ter controler de login -- loguei no facebook, sai, desliguei o pc, voltei p/ server e já estava logado
             $table->timestamps();
         });
     }
@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down() //dropa tabela
     {
         Schema::dropIfExists('users');
     }
