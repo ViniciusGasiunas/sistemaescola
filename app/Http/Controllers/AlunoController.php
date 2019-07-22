@@ -35,7 +35,7 @@ class AlunoController extends Controller{
             $aluno = Aluno::find(id);
             $alunos-> delete();
 
-            return redirect("/aluno/todos")
+            return redirect("/aluno/todos");
     }
-    }
+}
    

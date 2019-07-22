@@ -17,7 +17,7 @@ class CriarProdutos extends Migration
         Schema::create('produtos', function(Blueprint $table){ //create espera dois parametros(tabela, Blueprint)
             $table->bigIncrements('id');
             $table->string('nome_produto');
-            $table->bigInterger('id_categoria'); //altera a tabela de todo mundo com o novo campo que foi criado(GIT) -- para rodar: php artisan (re)fresh
+            $table->bigInteger('id_categoria'); //altera a tabela de todo mundo com o novo campo que foi criado(GIT) -- para rodar: php artisan (re)fresh
     });
 }
 
